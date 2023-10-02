@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+
+<div class="email-container">
+    <label for="email">E-mail:</label>
+    <input type="text" id="email">
+    <button onclick="submitEmail()">Follow</button>
+</div>
+
+<script>
+    function submitEmail() {
+        const emailValue = document.getElementById('email').value;
+
+        fetch('/api/submit-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ email: emailValue })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('E-mail submitted successfully!');
+            } else {
+                alert(data.message || 'Submission failed. Please try again.');
+            }
+        });
+    }
+
+</script>
+
+</body>
+</html>
