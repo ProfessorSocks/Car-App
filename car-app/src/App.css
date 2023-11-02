@@ -1,5 +1,20 @@
 .containernav{
   display: flex;
   flex-wrap: wrap;
-  
+  align-items: center;
+}
+
+.ProfileIcon{
+  justify-content: end;
+  align-items: end;
+
+}
+
+.NavbarButtons{
+  height: 80px;
+  width: 400%;
+  border-style: unset;
+  background-color: rgb(229, 56, 56);
+  color:rgb(255, 255, 255);
+  font-size: large;
 }

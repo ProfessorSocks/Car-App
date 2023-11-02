@@ -9,6 +9,12 @@ function Profile() {
             <h2>Your profile</h2>
         </div>
     )
+  }else {
+    return(
+        <div>
+            you are not logged in
+        </div>
+    )
   }
 }
 
